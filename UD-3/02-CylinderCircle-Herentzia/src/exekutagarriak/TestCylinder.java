@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pkg02.cylindercircle.herentzia;
+package exekutagarriak;
+
+import model.Cylinder;
 
 /**
  *
