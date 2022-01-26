@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package model;
 
 /**
@@ -48,11 +44,15 @@ public class Cylinder extends Circle {
 
    /** Returns the volume of this Cylinder */
    public double getVolume() {
-      return getArea()*height;   // Use Circle's getArea()
+      return super.getArea()*height;   // Use Circle's getArea()
    }
 
    /** Returns a self-descriptive String */
    public String toString() {
       return "This is a Cylinder";  // to be refined later
+   }
+   
+   public double getArea() {
+      return 2*Math.PI*getRadius()*height + 2*super.getArea();
    }
 }
