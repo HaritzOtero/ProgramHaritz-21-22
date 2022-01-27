@@ -8,7 +8,9 @@ package exekutagarriak;
 
 
 import static model.Demarkazioa.POR;
+import model.Entrenador;
 import model.Futbolista;
+import model.Masajista;
 
 /**
  *
@@ -22,6 +24,21 @@ public class Test {
     public static void main(String[] args) {
         
         Futbolista f1 = new Futbolista (1,POR,"Cantero",20,31,"Ander");
+        
+        System.out.println(f1);
+        Entrenador e1 = new Entrenador("47HO","Otero",18,1,"Rumián");
+        Masajista m1 = new Masajista(3,"Molina Fernández",18,2,"Itsaso");
+        
+        f1.concentrarse();
+        f1.entrenar();
+       
+        e1.dirigirEntrenamiento();
+        m1.darMasaje();
+        
+        System.out.println(f1);
+        System.out.println(e1);
+        System.out.println(m1);
+        
         
     }
     

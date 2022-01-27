@@ -46,6 +46,11 @@ public class Futbolista extends IntegrantesSeleccion {
     public String jugarPartido (){
         return "El futbolista está jugando el partido...";
     }
+
+    @Override
+    public String toString() {
+        return "Futbolista{id= "+ id + "nombre=" + nombre + ", apellidos=" + this.getApellidos() +", edad=" + this.getEdad() +", dorsal=" + this.getDorsal() + ", demarcacion=" + this.getDemarcacion() +  '}';
+    }
    
     
 }

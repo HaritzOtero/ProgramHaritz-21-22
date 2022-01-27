@@ -5,17 +5,23 @@
  */
 package exekutagarriak;
 
+import java.util.ArrayList;
+import model.IntegrantesSeleccion;
+import model.Partida;
+
 /**
  *
  * @author otero.haritz
  */
 public class PartidaKudeatu {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public ArrayList<IntegrantesSeleccion> selekzioa;
+    public Partida[]partidak;
+    public void main() {
+        
+    }
+    public void selekzioOsoaSortu(){
+        
     }
     
 }

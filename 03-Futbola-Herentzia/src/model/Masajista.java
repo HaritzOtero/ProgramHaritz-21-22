@@ -34,6 +34,6 @@ public class Masajista extends IntegrantesSeleccion{
         this.añosExperiencia = añosExperiencia;
     }
     public String darMasaje(){
-        return "El masajista esta dando un masaje...";
+        return "La masajista esta dando un masaje...";
     }
 }
