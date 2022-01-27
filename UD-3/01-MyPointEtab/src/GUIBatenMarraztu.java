@@ -27,22 +27,18 @@ public class GUIBatenMarraztu extends JPanel {
         g2d.setColor(Color.BLACK);
         g2d.drawLine(100,0 ,100,300);
         
-        g2d.drawLine(0,200 , 300,200);
-        g2d.setColor(Color.LIGHT_GRAY);
-       
-        g2d.drawLine(140,190 , 140,200);
-       
-        g2d.drawLine(120,190 , 120,200);
-       
-        g2d.drawLine(160,190 , 160,200);
+
         
-        g2d.drawLine(180,190 , 180,200);
+        int zbk1 = 0;
+        int zbk2 = 0;
+        int zbk4 = 190;
+        int zbk3 = 200;
         
-        g2d.drawLine(80,190 , 80,200);
-        
-        g2d.drawLine(60,190 , 60,200);
-        
-        g2d.drawLine(40,190 , 40,200);
+        for (int i = 0; i < 200; i = i+20) {
+            g2d.drawLine(zbk1, zbk4, zbk2, zbk3);
+            zbk1 = zbk1 + 20;
+            zbk2 = zbk2 + 20;
+        }
       
         
         g2d.setColor(Color.BLUE);

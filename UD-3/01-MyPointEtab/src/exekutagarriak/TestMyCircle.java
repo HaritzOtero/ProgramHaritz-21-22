@@ -14,7 +14,7 @@ import model.MyCircle;
  */
 public class TestMyCircle {
     public static void main(String[] args) {
-        MyCircle zirkulu1 = new MyCircle();
+        MyCircle zirkulu1 = new MyCircle(1,2,3,4);
         System.out.println("zirkulu1 => " + zirkulu1);
         
         MyCircle zirkulu2 = new MyCircle(4,2,15);
