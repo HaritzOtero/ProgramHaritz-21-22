@@ -34,5 +34,10 @@ public class Entrenador extends IntegrantesSeleccion {
     public String dirigirPartido(){
         return "El entrenador esta dirigiendo el partido...";
     }
+
+    @Override
+    public String toString() {
+        return "Entrenador{" + "idFederacion=" + idFederacion +", apellidos=" + this.getApellidos() +", edad=" + this.getEdad() +" id="+ this.getId()+", nombre=" + this.getNombre() + '}';
+    }
     
 }

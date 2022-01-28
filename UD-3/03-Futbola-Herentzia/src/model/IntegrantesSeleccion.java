@@ -55,9 +55,9 @@ public class IntegrantesSeleccion {
     }
     
     public String concentrarse(){
-        return "El jugador esta concentrado para el partido...";
+        return "...esta concentrado para el partido...";
     }
     public String viajar(){
-        return "El jugador esta viajando...";
+        return "...esta viajando...";
     }
 }

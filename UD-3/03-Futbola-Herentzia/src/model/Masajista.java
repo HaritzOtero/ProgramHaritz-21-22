@@ -29,11 +29,17 @@ public class Masajista extends IntegrantesSeleccion{
         return añosExperiencia;
     }
 
-    public Masajista(int añosExperiencia, String apellidos, int edad, int id, String nombre) {
+    public Masajista(int añosExperiencia, String apellidos, int edad, int id, String nombre, String titulacion) {
         super(apellidos, edad, id, nombre);
         this.añosExperiencia = añosExperiencia;
     }
     public String darMasaje(){
         return "La masajista esta dando un masaje...";
     }
+
+    @Override
+    public String toString() {
+        return "Masajista{"+" id="+ this.getId() + "titulacion=" + titulacion + ", a\u00f1osExperiencia=" + añosExperiencia + ", apellidos=" + this.getApellidos() +", edad=" + this.getEdad() + ", nombre=" + this.getNombre() + ", titulacion=" + this.getTitulacion()+ '}';
+    }
+    
 }

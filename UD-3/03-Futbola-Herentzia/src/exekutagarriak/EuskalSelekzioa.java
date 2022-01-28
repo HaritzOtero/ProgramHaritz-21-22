@@ -6,12 +6,15 @@
 package exekutagarriak;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 import static model.Demarkazioa.DEF;
 import static model.Demarkazioa.DEL;
 import static model.Demarkazioa.MED;
 import static model.Demarkazioa.POR;
+import model.Entrenador;
 import model.Futbolista;
 import model.IntegrantesSeleccion;
+import model.Masajista;
 /**
  *
  * @author otero.haritz
@@ -19,7 +22,7 @@ import model.IntegrantesSeleccion;
 public class EuskalSelekzioa {
     
     public static int azkenId = 0; 
-    public ArrayList<IntegrantesSeleccion> selekzioa;
+    public static ArrayList<IntegrantesSeleccion> selekzioa = new ArrayList();
     /** Programa honek metodo desberdinei deituko die banan banan. 
      *  Beharbada ez diozu koherentzia handirik topatuko programa osoari. 
      *  Ariketaren helburua da beste pakete bateko klase hierarkia erabiltzen trebatzea. 
@@ -46,7 +49,8 @@ public class EuskalSelekzioa {
      *  Amaitzeko, Villalibre entrenatzen hasiko da.
     */
     public static void futbolariBat(){
-        
+        Futbolista f1 = new Futbolista (azkenId++,DEL,"Villalibre",30,11,"Asier");
+        f1.entrenar();
     }
     
     /** Metodo honek hiru objektu berri sortuko ditu. Pertsona hauei dagokienak: 
@@ -58,7 +62,23 @@ public class EuskalSelekzioa {
      * Objektu bakoitza sortu ondoren, bere datuak inprimatu eta kontzentratu eta bidaiatuko dute
      */
     public static void bestePartaideBatzukSortu(){
+        Masajista m1 = new Masajista (2,"Sertxiberrieta",45,azkenId,"Iñaki","Fisioterapeuta");
+        Masajista m2 = new Masajista (14,"Medikua",42,azkenId,"Ander","Etxeburu");
+        Entrenador e1 = new Entrenador("ENJC","Clemente",50,4,"Javier");
         
+        System.out.println(m1);
+        System.out.println(m1.concentrarse());
+        System.out.println(m1.viajar());
+        System.out.println(e1);
+        System.out.println(e1.concentrarse());
+        System.out.println(e1.viajar());
+        System.out.println(m2);
+        
+         
+        System.out.println(m2.concentrarse());
+        System.out.println(m2.viajar());
+        
+       
     }
     
     
@@ -66,27 +86,27 @@ public class EuskalSelekzioa {
      * ArrayList estatiko baten.
      *  
      */
-    public static void selekzioOsoaSortu(){
-        azkenId = 0;
+    public  static void selekzioOsoaSortu(){  
+
         
-        selekzioa.add(new Futbolista (azkenId++,POR,"Fernandez",30,1,"Aitor")) ;
-        Futbolista f2 = new Futbolista (azkenId++,DEF,"Bustinza",30,1,"Unai");
-        Futbolista f3 = new Futbolista (azkenId++,DEF,"Balenziaga",30,1,"Mikel");
-        Futbolista f4 = new Futbolista (azkenId++,MED,"Illarramendi",30,1,"Asier");
-        Futbolista f5 = new Futbolista (azkenId++,DEF,"Martinez",30,1,"Aitor");
-        Futbolista f6 = new Futbolista (azkenId++,MED,"San Jose",30,1,"Aitor");
-        Futbolista f7 = new Futbolista (azkenId++,DEF,"Larrazabal",30,1,"Aitor");
-        Futbolista f8 = new Futbolista (azkenId++,MED,"Garcia",30,1,"Aitor");
-        Futbolista f9 = new Futbolista (azkenId++,DEL,"Aduriz",30,1,"Aitor");
-        Futbolista f10 = new Futbolista (azkenId++,MED,"Eraso",30,1,"Aitor");
-        Futbolista f11 = new Futbolista (azkenId++,DEL,"Villalibre",30,1,"Aitor");
-        Futbolista f12 = new Futbolista (azkenId++,DEF,"Fernandez",30,1,"Aitor");
-        Futbolista f13 = new Futbolista (azkenId++,POR,"Fernandez",30,1,"Aitor");
-        Futbolista f14 = new Futbolista (azkenId++,DEF,"Fernandez",30,1,"Aitor");
-        Futbolista f15 = new Futbolista (azkenId++,DEF,"Fernandez",30,1,"Aitor");
-        Futbolista f16 = new Futbolista (azkenId++,DEL,"Fernandez",30,1,"Aitor");
-        Futbolista f17 = new Futbolista (azkenId++,DEF,"Fernandez",30,1,"Aitor");
-    
+            selekzioa.add(new Futbolista (azkenId++,POR,"Fernandez",30,1,"Aitor")) ;
+            selekzioa.add(new Futbolista (azkenId++,DEF,"Bustinza",30,2,"Unai"));
+            selekzioa.add(new Futbolista (azkenId++,DEF,"Balenziaga",30,3,"Mikel"));
+            selekzioa.add(new Futbolista (azkenId++,MED,"Illarramendi",30,4,"Asier"));
+            selekzioa.add(new Futbolista (azkenId++,DEF,"Martinez",30,5,"Iñigo"));
+            selekzioa.add(new Futbolista (azkenId++,MED,"San Jose",30,6,"Mikel"));
+            selekzioa.add(new Futbolista (azkenId++,DEF,"Larrazabal",30,7,"Gaizka"));
+            selekzioa.add(new Futbolista (azkenId++,MED,"Garcia",30,8,"Manu"));
+            selekzioa.add(new Futbolista (azkenId++,DEL,"Aduriz",30,9,"Aritz"));
+            selekzioa.add(new Futbolista (azkenId++,MED,"Eraso",30,10,"Javier"));
+            selekzioa.add(new Futbolista (azkenId++,DEL,"Villalibre",30,11,"Asier"));
+            selekzioa.add(new Futbolista (azkenId++,DEF,"Fernandez",30,12,"Aihen"));
+            selekzioa.add(new Futbolista (azkenId++,POR,"Fernandez",30,13,"Iago"));
+            selekzioa.add(new Futbolista (azkenId++,DEF,"Fernandez",30,14,"Aritz"));
+            selekzioa.add(new Futbolista (azkenId++,DEF,"Fernandez",30,15,"Jesus"));
+            selekzioa.add(new Futbolista (azkenId++,DEL,"Fernandez",30,16,"Iñigo"));
+            selekzioa.add(new Futbolista (azkenId++,DEF,"Fernandez",30,17,"Dnaiel"));
+        System.out.println(selekzioa);
     }
     
     /** ArrayListetik objektu bat ezabatzen du. Aurkitzen ez badu false itzuliko du
@@ -95,7 +115,28 @@ public class EuskalSelekzioa {
      * @return 
      */
     public static boolean partaideaEzabatu(int id){
-
+        /**boolean encontrado = false;
+        
+        for(int i=0; i <= selekzioa.size();i++){
+            if(selekzioa.get(id).getId() == id){
+                encontrado = true;
+            }
+            else{
+                encontrado = false;
+            }
+        }
+        if(encontrado = true){
+            selekzioa.remove(azkenId);
+        }
+        else{
+            System.out.println("Jokalaria ez dago listan.");
+        }
+        */
+        
+        
+        
+        
         return false;
-    }
+        }
+    
 }
