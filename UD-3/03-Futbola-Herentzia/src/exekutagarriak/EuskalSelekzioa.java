@@ -101,16 +101,14 @@ public class EuskalSelekzioa {
         selekzioa.add(new Futbolista(azkenId++, DEL, "Aduriz", 30, 9, "Aritz"));
         selekzioa.add(new Futbolista(azkenId++, MED, "Eraso", 30, 10, "Javier"));
         selekzioa.add(new Futbolista(azkenId++, DEL, "Villalibre", 30, 11, "Asier"));
-        selekzioa.add(new Futbolista(azkenId++, DEF, "Fernandez", 30, 12, "Aihen"));
-        selekzioa.add(new Futbolista(azkenId++, POR, "Fernandez", 30, 13, "Iago"));
-        selekzioa.add(new Futbolista(azkenId++, DEF, "Fernandez", 30, 14, "Aritz"));
-        selekzioa.add(new Futbolista(azkenId++, DEF, "Fernandez", 30, 15, "Jesus"));
-        selekzioa.add(new Futbolista(azkenId++, DEL, "Fernandez", 30, 16, "Iñigo"));
-        selekzioa.add(new Futbolista(azkenId++, DEF, "Fernandez", 30, 17, "Dnaiel"));
-       
-        for (Object o : selekzioa)
-        System.out.println(o);
-        }
+        selekzioa.add(new Futbolista(azkenId++, DEF, "Muñoz", 30, 12, "Aihen"));
+        selekzioa.add(new Futbolista(azkenId++, POR, "Herrerin", 30, 13, "Iago"));
+        selekzioa.add(new Futbolista(azkenId++, DEF, "Elustondo", 30, 14, "Aritz"));
+        selekzioa.add(new Futbolista(azkenId++, DEF, "Areso", 30, 15, "Jesus"));
+        selekzioa.add(new Futbolista(azkenId++, DEL, "Vicente", 30, 16, "Iñigo"));
+        selekzioa.add(new Futbolista(azkenId++, DEF, "Vivian", 30, 17, "Dnaiel"));
+        
+    }
     /**
      * ArrayListetik objektu bat ezabatzen du. Aurkitzen ez badu false itzuliko
      * du
