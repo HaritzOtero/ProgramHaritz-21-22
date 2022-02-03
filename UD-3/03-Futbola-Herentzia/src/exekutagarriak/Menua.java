@@ -24,6 +24,7 @@ import static exekutagarriak.EuskalSelekzioa.selekzioa;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
+import model.Demarkazioa;
 import static model.Demarkazioa.DEF;
 import static model.Demarkazioa.DEL;
 import static model.Demarkazioa.MED;
@@ -91,11 +92,12 @@ public class Menua {
                     FutbolariakAlph();
                     break;
                 case 4:
-                    System.out.println("Laugarren aukera aukeratu duzu.");
+                    System.out.println("Aldaketa aukera aukeratu duzu.");
                     aldaketa();
                     break;
                 case 5:
-                    System.out.println("Eskerrik asko programa hau erabiltzeagatik.");
+                    System.out.println("Bilatu jokalaria abizenetik");
+                    bilatu();
                     break;
                 case 6:
                     System.out.println("Eskerrik asko programa hau erabiltzeagatik.");
@@ -114,24 +116,31 @@ public class Menua {
         }
 
         Collections.sort(apellidos);
-        System.out.println(apellidos);
+
+        for (Object o : apellidos) {
+            System.out.println(o);
+        }
     }
 
     public static void aldaketa() {
         int Id;
-        String postua;
+
         Scanner in = new Scanner(System.in);
         System.out.println("Nor aldatu nahi dozu postuz? Idatzi Id-a");
         Id = in.nextInt();
         Id = Id - 1;
-        if (selekzioa.get(Id) instanceof Futbolista == true){
-            System.out.println(((Futbolista)selekzioa.get(Id)).getDemarcacion() + " Postuan zegoen. Zein postutara doa? ");
-        }else{
+        if (selekzioa.get(Id) instanceof Futbolista == true) {
+            System.out.println(((Futbolista) selekzioa.get(Id)).getDemarcacion() + " Postuan zegoen. Zein postutara doa? ");
+        } else {
             System.out.println("Partaidea ez da futbolista");
         }
-        postua = in.next();
-        
-        
+
+        Demarkazioa postua = Demarkazioa.valueOf(in.next().toUpperCase());
+        ((Futbolista) selekzioa.get(Id)).setDemarcacion(postua);
+        System.out.println(selekzioa);
+
+        System.out.println("Ondo aldatu da.");
+
     }
 
     public static void selekzioOsoa() {
@@ -139,8 +148,9 @@ public class Menua {
             System.out.println(o);
         });
     }
+
     public static void selekzioOsoaSortu() {
-        
+
         selekzioa.add(new Futbolista(azkenId++, POR, "Fernandez", 30, 1, "Aitor"));
         selekzioa.add(new Futbolista(azkenId++, DEF, "Bustinza", 30, 2, "Unai"));
         selekzioa.add(new Futbolista(azkenId++, DEF, "Balenziaga", 30, 3, "Mikel"));
@@ -158,6 +168,91 @@ public class Menua {
         selekzioa.add(new Futbolista(azkenId++, DEF, "Areso", 30, 15, "Jesus"));
         selekzioa.add(new Futbolista(azkenId++, DEL, "Vicente", 30, 16, "Iñigo"));
         selekzioa.add(new Futbolista(azkenId++, DEF, "Vivian", 30, 17, "Dnaiel"));
+        selekzioa.add(new Masajista(2, "Sertxiberrieta", 45, azkenId, "Iñaki", "Fisioterapeuta"));
+        selekzioa.add(new Masajista(14, "Medikua", 42, azkenId, "Ander", "Etxeburu"));
+        selekzioa.add(new Entrenador("ENJC", "Clemente", 50, 4, "Javier"));
+    }
+
+    public static void bilatu() {
+        Scanner in = new Scanner(System.in);
+
+        System.out.print("Sartu Jokalariaren abizena: ");
         
+        String abizena = in.next();
+        int i = 0;
+        boolean encontrado = false;
+
+        while (i < selekzioa.size() && encontrado == false) {
+
+            if (abizena.equals(selekzioa.get(i).getApellidos())) {
+                System.out.println("ID = " + selekzioa.get(i).getId());
+                System.out.println("Izena = " + selekzioa.get(i).getNombre());
+                System.out.println("Abizena = " + selekzioa.get(i).getApellidos());
+                System.out.println("Adina = " + selekzioa.get(i).getEdad());
+                //System.out.println("Dorsal= "+ selekzioa.get(i));
+                encontrado = true;
+            }
+            i++;
+
+        }
+        if (encontrado == false) {
+            System.out.println("Jokalaria ez dago taldean");
+        }
+    } 
+    public static void datuakTaldekatuta() {
+        
+        ArrayList<IntegrantesSeleccion> futbolistas = new ArrayList<>();
+        ArrayList<IntegrantesSeleccion> entrenadores = new ArrayList<>();
+        ArrayList<IntegrantesSeleccion> masajistas = new ArrayList<>();
+        ArrayList<IntegrantesSeleccion> integrantes = new ArrayList<>();
+
+        for (IntegrantesSeleccion integrante : selekzioa) {
+            
+            if (integrante instanceof Futbolista) {
+                futbolistas.add(integrante);
+            } else if (integrante instanceof Entrenador) {
+                entrenadores.add(integrante);
+            } else if (integrante instanceof Masajista) {
+                masajistas.add(integrante);
+            } else {
+                integrantes.add(integrante);
+            }
+
+        }
+
+        System.out.println("Futbolariak:\n");
+
+        for (IntegrantesSeleccion integrante : futbolistas) {
+            System.out.println(integrante);
+            System.out.println("");
+        }
+        System.out.println("");
+
+        System.out.println("Entrenatzaileak:\n");
+
+        for (IntegrantesSeleccion integrante : entrenadores) {
+            System.out.println(integrante);
+            System.out.println("");
+        }
+        System.out.println("");
+
+        System.out.println("Masajistak:\n");
+
+        for (IntegrantesSeleccion integrante : masajistas) {
+            System.out.println(integrante);
+            System.out.println("");
+        }
+        System.out.println("");
+
+        System.out.println("Integranteak:\n");
+
+        for (IntegrantesSeleccion integrante : integrantes) {
+            System.out.println(integrante);
+            System.out.println("");
+        }
+        System.out.println("");
+
     }
 }
+
+
