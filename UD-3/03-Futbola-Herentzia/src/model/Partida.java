@@ -47,6 +47,6 @@ public class Partida {
         this.txartelak = txartelak;
     }
     public void txartelaJarri(Futbolista f){
-        System.out.println(f + " jokalariari txartela atera zaio.");
+        txartelak.add(f);
     }
 }
