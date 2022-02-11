@@ -17,9 +17,45 @@ public class Produktua {
 
     public Produktua(String kodea, String izena, double prezioa) {
         this.kodea = new char[kodea.length()];
+        this.izena = izena;
+        this.prezioa = prezioa;
         for (int i = 0; i < kodea.length(); i++) {
             this.kodea[i] = kodea.charAt(i);
         }
 
     }
+
+    @Override
+    public String toString() {
+        return getStrKodea() + ", " + getIzena() + ", " + getPrezioa() ;
+    }
+
+    public char[] getKodea() {
+        return kodea;
+    }
+    
+    public String getStrKodea() {
+        return String.valueOf(kodea);
+    }
+
+    public String getIzena() {
+        return izena;
+    }
+
+    public double getPrezioa() {
+        return prezioa;
+    }
+
+    public void setKodea(char[] kodea) {
+        this.kodea = kodea;
+    }
+
+    public void setIzena(String izena) {
+        this.izena = izena;
+    }
+
+    public void setPrezioa(double prezioa) {
+        this.prezioa = prezioa;
+    }
+
 }

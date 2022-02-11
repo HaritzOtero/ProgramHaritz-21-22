@@ -35,17 +35,75 @@ public class Erosketa {
         this.guztira = guztira;
     }
 
+    public void setKodea(char[] kodea) {
+        this.kodea = kodea;
+    }
+
+    public void setData(LocalDate data) {
+        this.data = data;
+    }
+
+    public void setBezeroa(Bezeroa bezeroa) {
+        this.bezeroa = bezeroa;
+    }
+
+    public void setProduktuak(ArrayList<Produktua> produktuak) {
+        this.produktuak = produktuak;
+    }
+
+    public void setUnitateak(ArrayList<Integer> unitateak) {
+        this.unitateak = unitateak;
+    }
+
+    public void setGuztira(double guztira) {
+        this.guztira = guztira;
+    }
+    
+    public String getKodea() {
+        return String.valueOf(kodea);
+    }
+
+    public LocalDate getData() {
+        return data;
+    }
+
+    public Bezeroa getBezeroa() {
+        return bezeroa;
+    }
+
+    public ArrayList<Produktua> getProduktuak() {
+        return produktuak;
+    }
+
+    public ArrayList<Integer> getUnitateak() {
+        return unitateak;
+    }
+
+    public double getGuztira() {
+        return guztira;
+    }
+    
     @Override
     public String toString() {
-        return "Erosketa{" + "kodea=" + kodea + ", data=" + data + ", bezeroa=" + bezeroa + ", produktuak=" + produktuak + ", unitateak=" + unitateak + ", guztira=" + guztira + '}';
+        return "Erosketa{" + "kodea=" + getStrKodea() + ", data=" + data + ", bezeroa=" + bezeroa + ", produktuak=" + produktuak + ", unitateak=" + unitateak + ", guztira=" + guztira + '}';
     }
 
     public String toStringLuzea(){
-        return null;
+        return "EROSKETA \n"
+                + "     Kodea: " + getKodea() + "\n"
+                + "     Bezeroa: " + getBezeroa() + "\n"
+                + "     Izena: " + bezeroa.getIzena() + "\n"
+                + "     Helbidea: " + bezeroa.getHelbidea() + "\n"
+                + "     1.produktua: " + getProduktuak() + "\n"
+                + "             GUZTIRA: " + getGuztira();
     }
     
     public boolean guztiraEgiaztatu(){
         return false;
         
+    }
+    
+    public String getStrKodea() {
+        return String.valueOf(kodea);
     }
 }
