@@ -35,6 +35,7 @@ public class Erosketa {
         this.guztira = guztira;
     }
 
+
     public void setKodea(char[] kodea) {
         this.kodea = kodea;
     }
@@ -85,7 +86,7 @@ public class Erosketa {
     
     @Override
     public String toString() {
-        return "Erosketa{" + "kodea=" + getStrKodea() + ", data=" + data + ", bezeroa=" + bezeroa + ", produktuak=" + produktuak + ", unitateak=" + unitateak + ", guztira=" + guztira + '}';
+        return "Erosketa{" + "kodea=" + getStrKodea() + ", data=" + LocalDate.now() + ", bezeroa=" + bezeroa + ", produktuak=" + getProduktuak() + ", unitateak=" + getUnitateak() + ", guztira=" + guztira + '}';
     }
 
     public String toStringLuzea(){
@@ -105,5 +106,13 @@ public class Erosketa {
     
     public String getStrKodea() {
         return String.valueOf(kodea);
+    }
+    
+        public static double guztiraKalkulatu(ArrayList<Produktua> erositakoProduktuak, ArrayList<Integer> erositakoUnitateak) {
+        double erosketaGuztira = 0;
+        for (int i = 0; i < erositakoProduktuak.size(); i++) {
+            erosketaGuztira = erositakoProduktuak.get(i).getPrezioa() * erositakoUnitateak.get(i);
+        }
+        return erosketaGuztira;
     }
 }
