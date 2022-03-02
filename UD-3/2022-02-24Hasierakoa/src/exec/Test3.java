@@ -14,6 +14,7 @@ public class Test3 {
             k1.marraztu();
         } else
            k2.marraztu();
-        
+       
+        System.out.println(k1.getErtzenLuzera());
     }
 }

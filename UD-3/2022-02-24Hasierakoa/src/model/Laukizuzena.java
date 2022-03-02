@@ -85,5 +85,13 @@ public class Laukizuzena implements Marrazgarria {
         
         return puntuak;
     }
+    public boolean isInside(Puntua puntuBat){
+        boolean inside = false;
+        
+        if (puntuBat.getX()>erpinBat.getX() && puntuBat.getX()<kontrakoErpina.getX() && puntuBat.getY()<kontrakoErpina.getY() && puntuBat.getY()>erpinBat.getY()) {
+            inside = true;
+        }
+        return inside;
+}
 
 }
