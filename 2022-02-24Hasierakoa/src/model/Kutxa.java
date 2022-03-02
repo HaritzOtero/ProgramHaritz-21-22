@@ -12,7 +12,7 @@ package model;
 public class Kutxa extends Laukizuzena {
     private int altuera;
 
-    public Kutxa(int altuera, Puntua erpina, Puntua kontrakoErpina) {
+    public Kutxa(Puntua erpina, Puntua kontrakoErpina,int altuera) {
         super(erpina, kontrakoErpina);
         this.altuera = altuera;
     }

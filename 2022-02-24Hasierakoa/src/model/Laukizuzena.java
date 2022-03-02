@@ -5,6 +5,7 @@
  */
 package model;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import model.Puntua;
 
@@ -27,10 +28,8 @@ public class Laukizuzena implements Marrazgarria {
     }
 
     public Laukizuzena(int x1, int y1, int x2, int y2) {
-        x1 = 0;
-        y1 = 0;
-        x2 = 0;
-        y2 = 0;
+        this.erpinBat = new Puntua(x1,y1);
+        this.kontrakoErpina = new Puntua(x2,y2);
     }
 
     public Puntua getErpinBat() {
@@ -44,29 +43,47 @@ public class Laukizuzena implements Marrazgarria {
     @Override
     public String toString() {
 
-        return Arrays.toString(getLauErpinenArrayLista());
+        return Arrays.toString(getLauErpinenArraya());
 
     }
 
     @Override
     public void marraztu() {
-
+           
     }
 
-    public Puntua[] getLauErpinenArrayLista() {
+    public Puntua[] getLauErpinenArraya() {
         Puntua[] erpinak = new Puntua[4];
 
-        Puntua erpina1 = new Puntua(erpinBat.getX(), erpinBat.getY());
-        Puntua erpina2 = new Puntua(erpinBat.getY(), erpinBat.getX());
-        Puntua erpina3 = new Puntua(kontrakoErpina.getX(), kontrakoErpina.getY());
-        Puntua erpina4 = new Puntua(kontrakoErpina.getY(), kontrakoErpina.getX());
+        
+        
+        Puntua erpina3 = new Puntua(kontrakoErpina.getX(), erpinBat.getY());
+        Puntua erpina4 = new Puntua(erpinBat.getX(), kontrakoErpina.getY());
 
-        erpina1 = erpinak[0];
-        erpina2 = erpinak[1];
-        erpina3 = erpinak[2];
-        erpina4 = erpinak[3];
+        erpinak[0] = erpinBat;
+        erpinak[1] = erpina3;
+        erpinak[2] = kontrakoErpina;
+        erpinak[3] = erpina4; 
+        
+        
         
         return erpinak;
+    }
+    
+    public ArrayList<Puntua> getLauErpinenArrayLista(){
+    
+        ArrayList<Puntua> puntuak =new ArrayList<>();
+        Puntua p1 = new Puntua(erpinBat.getX(),erpinBat.getY());
+        Puntua p2 = new Puntua(kontrakoErpina.getX(),erpinBat.getY());
+        Puntua p3 = new Puntua(kontrakoErpina.getX(),kontrakoErpina.getY());
+        Puntua p4 = new Puntua(erpinBat.getX(),kontrakoErpina.getY());
+        
+        puntuak.add(p1);
+        puntuak.add(p2);
+        puntuak.add(p3);
+        puntuak.add(p4);
+        
+        return puntuak;
     }
 
 }

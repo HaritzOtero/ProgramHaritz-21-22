@@ -13,7 +13,7 @@ public class Test1 {
         System.out.println("=============================");
         System.out.println(p1);
         System.out.println(p2);
-        System.out.println(p2);
+        System.out.println(p3);
         
         System.out.println("Desberdinak diren puntuak marraztuko ditugu:");
         System.out.println("============================================");

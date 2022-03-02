@@ -18,9 +18,12 @@ public class Puntua implements Marrazgarria{
     public Puntua(int x, int y) {
         this.x = x;
         this.y = y;
+        sortutakoPuntuak++;
     }
 
     public Puntua() {
+        x = 0;
+        y = 0;
         sortutakoPuntuak++;
     }
 
@@ -57,7 +60,7 @@ public class Puntua implements Marrazgarria{
 
     public boolean isEzkerreragoThan(Puntua bestePuntuBat) {
         
-        if(bestePuntuBat.getX() > x){
+        if(bestePuntuBat.getX() > this.x){
             return true;
         }else{
             return false;
@@ -91,9 +94,10 @@ public class Puntua implements Marrazgarria{
         return true;
     }
 
+    @Override
     public void marraztu() {
-        System.out.println("(" + getX() + ", " + getY() + ") Puntua GUI baten marraztua izan da.");
-        sortutakoPuntuak++;
+        System.out.println(this.toString() + "Puntua GUI baten marraztua izan da.");
+      
     }
 
     @Override
