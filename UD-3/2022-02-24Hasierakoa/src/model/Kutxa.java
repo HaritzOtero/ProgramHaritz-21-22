@@ -5,6 +5,9 @@
  */
 package model;
 
+import java.awt.Graphics2D;
+import java.util.ArrayList;
+
 /**
  *
  * @author otero.haritz
@@ -55,6 +58,21 @@ public boolean isHandiagoa(Kutxa besteKutxaBat){
         return "Lehenengo ertzaren luzera: " + ertza1 + "u Bigarren ertzaren luzera: " + ertza2 + "u Hirugarren ertzaren luzera: " + ertza3 + "u";
                
         
+        
+    }
+    
+    public static Kutxa handiena(Kutxa[] kutxak){
+        Kutxa handiena = kutxak[0];
+        for (int i = 0; i < kutxak.length; i++) {
+            if(handiena.getBolumena() < kutxak[i].getBolumena()){
+                handiena = kutxak[i];
+            }
+        }
+        return handiena;
+    }
+    
+    
+    public void Marraztu(Graphics2D g){
         
     }
 }

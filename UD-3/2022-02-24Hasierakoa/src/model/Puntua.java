@@ -5,6 +5,8 @@
  */
 package model;
 
+import java.awt.Graphics2D;
+
 /**
  *
  * @author otero.haritz
@@ -94,7 +96,7 @@ public class Puntua implements Marrazgarria{
         return true;
     }
 
-    @Override
+    
     public void marraztu() {
         System.out.println(this.toString() + "Puntua GUI baten marraztua izan da.");
       
@@ -103,6 +105,16 @@ public class Puntua implements Marrazgarria{
     @Override
     public String toString() {
         return "(" + getX() + ", " + getY() + ")";
+    }
+
+    @Override
+    public void Marraztu() {
+        
+    }
+
+    @Override
+    public void marraztu(Graphics2D g) {
+        
     }
 
     

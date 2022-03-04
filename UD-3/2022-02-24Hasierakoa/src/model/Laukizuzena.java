@@ -5,6 +5,7 @@
  */
 package model;
 
+import java.awt.Graphics2D;
 import java.util.ArrayList;
 import java.util.Arrays;
 import model.Puntua;
@@ -47,7 +48,7 @@ public class Laukizuzena implements Marrazgarria {
 
     }
 
-    @Override
+    
     public void marraztu() {
            
     }
@@ -94,4 +95,14 @@ public class Laukizuzena implements Marrazgarria {
         return inside;
 }
 
+    @Override
+    public void Marraztu() {
+        
+    }
+
+    @Override
+    public void marraztu(Graphics2D g) {
+        
+    }
+   
 }
