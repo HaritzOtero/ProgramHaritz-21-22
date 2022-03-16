@@ -29,6 +29,8 @@ public class View extends javax.swing.JFrame {
 
         jDialogHiztegiaBistaratu = new javax.swing.JDialog();
         jLabel2 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextAreaHiztegia = new javax.swing.JTextArea();
         jButtonTxertatu = new javax.swing.JButton();
         jButtonIrten = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -41,21 +43,32 @@ public class View extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel2.setText("HIZTEGI OSOA");
 
+        jTextAreaHiztegia.setColumns(20);
+        jTextAreaHiztegia.setRows(5);
+        jScrollPane1.setViewportView(jTextAreaHiztegia);
+
         javax.swing.GroupLayout jDialogHiztegiaBistaratuLayout = new javax.swing.GroupLayout(jDialogHiztegiaBistaratu.getContentPane());
         jDialogHiztegiaBistaratu.getContentPane().setLayout(jDialogHiztegiaBistaratuLayout);
         jDialogHiztegiaBistaratuLayout.setHorizontalGroup(
             jDialogHiztegiaBistaratuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDialogHiztegiaBistaratuLayout.createSequentialGroup()
-                .addGap(151, 151, 151)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(157, Short.MAX_VALUE))
+                .addGroup(jDialogHiztegiaBistaratuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDialogHiztegiaBistaratuLayout.createSequentialGroup()
+                        .addGap(139, 139, 139)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jDialogHiztegiaBistaratuLayout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
         jDialogHiztegiaBistaratuLayout.setVerticalGroup(
             jDialogHiztegiaBistaratuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDialogHiztegiaBistaratuLayout.createSequentialGroup()
                 .addGap(37, 37, 37)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(317, Short.MAX_VALUE))
+                .addGap(52, 52, 52)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -70,6 +83,11 @@ public class View extends javax.swing.JFrame {
 
         jButtonIrten.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButtonIrten.setText("IRTEN");
+        jButtonIrten.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonIrtenActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("HITZ BERRIA");
@@ -164,6 +182,10 @@ public class View extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonHiztegiOsoaActionPerformed
 
+    private void jButtonIrtenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIrtenActionPerformed
+        
+    }//GEN-LAST:event_jButtonIrtenActionPerformed
+
     public static View viewaSortuBistaratu() {
         View v = new View();
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -218,6 +240,8 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelEuskaraz;
     private javax.swing.JLabel jLabelGazteleraz;
+    private javax.swing.JScrollPane jScrollPane1;
+    javax.swing.JTextArea jTextAreaHiztegia;
     javax.swing.JTextField jTextFieldEuskaraz;
     javax.swing.JTextField jTextFieldGazteleraz;
     // End of variables declaration//GEN-END:variables

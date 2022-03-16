@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 /**
  *
@@ -18,7 +19,6 @@ import java.sql.Statement;
  */
 public class Model {
 
-    
     private Connection connect() {
         // SQLite connection string
         String url = "jdbc:sqlite:C:\\Users\\otero.haritz\\Desktop\\Haritz DAM\\PROGRAMAZIOA\\GitHub\\Net Beans\\ProgramHaritz-21-22\\UD4-DatuenPersistentzia\\HiztegiaSQLite\\src\\db\\Hiztegia.db";
@@ -31,24 +31,42 @@ public class Model {
         return conn;
     }
 
-     public void selectAll(){
+    public void selectAll() {
         String sql = "SELECT id, euskaraz, gazteleraz FROM Terminoak";
-        
+
         try (Connection conn = this.connect();
-             Statement stmt  = conn.createStatement();
-             ResultSet rs    = stmt.executeQuery(sql)){
-            
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql)) {
+
             // loop through the result set
             while (rs.next()) {
-                Terminoa t = new Terminoa(rs.getInt("id"),rs.getString("euskaraz"),rs.getString("gazteleraz"));
+                Terminoa t = new Terminoa(rs.getInt("id"), rs.getString("euskaraz"), rs.getString("gazteleraz"));
                 System.out.println(t);
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
-     
-     public void update(Terminoa t) {
+
+    public String hiztegiaInprimatu() {
+        String sql = "SELECT id, euskaraz, gazteleraz FROM Terminoak";
+        ArrayList <Terminoa> terminoak = new ArrayList<>();
+        try (Connection conn = this.connect();
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql)) {
+
+            // loop through the result set
+            while (rs.next()) {
+                Terminoa t = new Terminoa(rs.getInt("id"), rs.getString("euskaraz"), rs.getString("gazteleraz"));
+                terminoak.add(t);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return terminoak.toString();
+    }
+
+    public void update(Terminoa t) {
         String sql = "UPDATE Terminoak SET euskaraz = ? , "
                 + "gazteleraz = ? "
                 + "WHERE id = ?";
@@ -66,7 +84,8 @@ public class Model {
             System.out.println(e.getMessage());
         }
     }
-     public void insert(Terminoa t) {
+
+    public void insert(Terminoa t) {
         String sql = "INSERT INTO Terminoak(euskaraz,gazteleraz) VALUES(?,?)";
 
         try (Connection conn = this.connect();
@@ -78,8 +97,8 @@ public class Model {
             System.out.println(e.getMessage());
         }
     }
-    
-     public void delete(int id) {
+
+    public void delete(int id) {
         String sql = "DELETE FROM Terminoak WHERE id = ?";
 
         try (Connection conn = this.connect();
@@ -93,6 +112,6 @@ public class Model {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-     
-} 
+
+    }
 }
